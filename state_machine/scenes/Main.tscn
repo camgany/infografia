@@ -1,14 +1,14 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/characters/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://scenes/HitBox.tscn" type="PackedScene" id=3]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 29, 29.5 )
+[ext_resource path="res://scenes/characters/Enemy.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 29.5, 19 )
+extents = Vector2( 36.75, 66.5 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 30.4999, 55.75 )
 
 [node name="Main" type="Node2D"]
 
@@ -20,23 +20,22 @@ collision_mask = 2
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="walls"]
 polygon = PoolVector2Array( 22, 81, 70, 211, 44, 443, 53, 558, 283, 575, 569, 573, 872, 566, 970, 547, 964, 355, 915, 173, 941, 94, 944, 5, 1035, -13, 1028, 598, 24, 600, -33, 134 )
 
-[node name="pinchos" type="StaticBody2D" parent="."]
-position = Vector2( 531, 173 )
-collision_mask = 3
+[node name="Enemy" parent="." instance=ExtResource( 4 )]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pinchos"]
-position = Vector2( 0, -0.5 )
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="pinchos"]
-texture = ExtResource( 2 )
-
-[node name="HitBox" parent="pinchos" instance=ExtResource( 3 )]
+[node name="HitBox" parent="Enemy" instance=ExtResource( 3 )]
+position = Vector2( -19, -23.2 )
+scale = Vector2( 0.2, 0.2 )
 collision_layer = 32
 collision_mask = 4
 
-[node name="CollisionShape2D" parent="pinchos/HitBox" index="0"]
-position = Vector2( -0.5, 9 )
+[node name="CollisionShape2D" parent="Enemy/HitBox" index="0"]
+position = Vector2( 75.9999, 137 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 2 )
 
-[editable path="pinchos/HitBox"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemy"]
+position = Vector2( -3.80002, 3.2 )
+scale = Vector2( 0.2, 0.2 )
+shape = SubResource( 1 )
+
+[editable path="Enemy/HitBox"]

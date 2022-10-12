@@ -386,23 +386,23 @@ states/block/position = Vector2( 135.5, 222.75 )
 states/block_idle/node = SubResource( 21 )
 states/block_idle/position = Vector2( 160.25, 95.5 )
 states/death/node = SubResource( 22 )
-states/death/position = Vector2( 601.25, 334.5 )
+states/death/position = Vector2( 603.25, 364.5 )
 states/fall/node = SubResource( 44 )
 states/fall/position = Vector2( 754.562, 390.5 )
 states/hurt/node = SubResource( 23 )
 states/hurt/position = Vector2( 326, 184.75 )
 states/idle/node = SubResource( 24 )
-states/idle/position = Vector2( 456, 76.5 )
+states/idle/position = Vector2( 579, -14.5 )
 states/jump/node = SubResource( 45 )
 states/jump/position = Vector2( 785, 275.5 )
 states/roll/node = SubResource( 25 )
 states/roll/position = Vector2( 273, 415.5 )
 states/run/node = SubResource( 26 )
-states/run/position = Vector2( 378, 281 )
+states/run/position = Vector2( 318, 294 )
 transitions = [ "idle", "run", SubResource( 27 ), "idle", "attack1", SubResource( 28 ), "idle", "attack2", SubResource( 29 ), "attack2", "attack3", SubResource( 30 ), "attack3", "idle", SubResource( 31 ), "idle", "block_idle", SubResource( 32 ), "block_idle", "idle", SubResource( 33 ), "block_idle", "block", SubResource( 34 ), "run", "hurt", SubResource( 36 ), "idle", "hurt", SubResource( 37 ), "hurt", "idle", SubResource( 38 ), "run", "roll", SubResource( 39 ), "idle", "death", SubResource( 40 ), "roll", "run", SubResource( 41 ), "block", "block_idle", SubResource( 46 ), "run", "death", SubResource( 47 ), "attack1", "idle", SubResource( 48 ), "idle", "jump", SubResource( 49 ), "jump", "fall", SubResource( 50 ), "fall", "idle", SubResource( 51 ), "run", "jump", SubResource( 52 ), "run", "idle", SubResource( 53 ), "run", "attack2", SubResource( 54 ), "run", "attack1", SubResource( 55 ) ]
 start_node = "idle"
 end_node = "death"
-graph_offset = Vector2( 16.3525, 142.198 )
+graph_offset = Vector2( 16.3525, -90.5997 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=43]
 
